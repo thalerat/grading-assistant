@@ -21,6 +21,7 @@ CSE 14X Grading Assistant is a program to help optimize the time that you spend 
     1. [Adding, Editing, and Removing Annotations](#adding-editing-and-removing-annotations)
     2. [Adding and Removing Assignments](#adding-and-removing-assignments)
     3. [Adding, Editing, and Removing Categories](#adding-editing-and-removing-categories)
+6. [Support](#support)
 
 ## Installing
 
@@ -134,6 +135,10 @@ To remove an assignment from the annotation bank, hit the "+" button for adding 
 
 To add a category to the annotation bank, go to Edit > Categories. In the form that appears, selecting the "+" button will prompt you to enter in a category name and add the new category to the bank. By default, the category will be graded and an abbreviation will automatically be generated for the new category.
 
-To edit an already existing category, select any category from the list and make the changes that you would like. Making any edits will apply those edits to all mistakes and annotations in the bank. These changes are automatically applied when they're made. You can also reorder the categories by using the "v" and "^" buttons after selecting a category. Note that non-graded categories always come after graded categories and this cannot be changed.
+To edit an already existing category, select any category from the list and make the changes that you would like. Making any edits will apply those edits to all mistakes and annotations in the bank. These changes are automatically applied when they're made. You can also reorder the categories by using the "v" and "^" buttons after selecting a category. Note that non-graded categories always come after graded categories and that this cannot be changed.
 
-To remove a category, select any category from the list and hit the "-" button. This will open a pop-up asking you to confirm that you would like to delete the category. Hit "Yes" to delete the category and all mistakes and annotations from the bank.
+To remove a category, select any category from the list and hit the "-" button. This will open a pop-up asking you to confirm that you would like to delete the category. Hit "Yes" to delete the category and all of its mistakes and annotations from the bank.
+
+## Support
+
+Please email [thalea@uw.edu](mailto:thalea@uw.edu) if you notice any bugs or issues while grading.
