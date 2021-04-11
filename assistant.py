@@ -1040,7 +1040,7 @@ class GradingAssistantView:
             self.selected_category_entry = ttk.Entry(self.selected_category_frame, width=50, textvariable=self.category_var)
             self.selected_category_entry.grid(row=0, column=0, columnspan=3, pady=2, sticky='ew')
             self.category_var.trace("w", lambda *args: edit())
-            self.abbreviation_label = ttk.Label(self.selected_category_frame, text='')
+            self.abbreviation_label = ttk.Label(self.selected_category_frame, text='Abbreviation')
             self.abbreviation_label.grid(row=1, column=0, pady=2, sticky='w')
             self.abbreviation_var = tk.StringVar()
             self.abbreviation_entry = ttk.Entry(self.selected_category_frame, width=25, textvariable=self.abbreviation_var)
