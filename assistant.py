@@ -1235,6 +1235,7 @@ class GradingAssistantView:
         self.annotation_bank_bar = tk.Menu(self.menu_bar, tearoff=0)
         self.annotation_bank_bar.add_command(label="New", command=self.new_bank,
                 accelerator="Ctrl+N")
+        self.annotation_bank_bar.add_separator()
         self.annotation_bank_bar.add_command(label="Save", command=self.save_bank,
                 accelerator="Ctrl+S")
         self.annotation_bank_bar.add_command(label="Save as...", command=self.save_bank_as,
