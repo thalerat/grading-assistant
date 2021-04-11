@@ -2,6 +2,8 @@
 
 CSE 14X Grading Assistant is a program to help optimize the time that you spend grading on Ed.
 
+![Image of assistant running on windows](/windows-image.png)
+
 1. [Installing](#installing)
 2. [Running](#running)
 3. [Creating a Scoresheet](#creating-a-scoresheet)
