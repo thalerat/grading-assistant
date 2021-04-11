@@ -739,10 +739,13 @@ class GradingAssistantView:
             confirm = messagebox.askquestion("Delete Assignment", "Delete " + assignment +
                     " and all associated annotations?", icon='warning')
             if confirm == 'yes' and assignment in self.model.assignments:
+                to_remove = []
                 for i in range(len(self.model.annotations)):
                     annotation = self.model.annotations[i]
                     if annotation[0] == assignment:
-                        self.model.remove_annotation(i)
+                        to_remove.append(i)
+                for i in reversed(to_remove):
+                    self.model.remove_annotation(i)
                 self.model.assignments.remove(assignment)
                 self.update()
 
