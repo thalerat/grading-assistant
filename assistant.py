@@ -74,10 +74,10 @@ class GradingAssistantModel:
         self.mistakes = []
         self.perfect = DEFAULT_PERFECT
         self.poor = DEFAULT_POOR
-        self.general = DEFAULT_GENERAL
-        self.categories = DEFAULT_CATEGORIES
-        self.not_graded_categories = DEFAULT_NOT_GRADED
-        self.abbreviations = DEFAULT_ABBREVIATIONS
+        self.general = DEFAULT_GENERAL.copy()
+        self.categories = DEFAULT_CATEGORIES.copy()
+        self.not_graded_categories = DEFAULT_NOT_GRADED.copy()
+        self.abbreviations = DEFAULT_ABBREVIATIONS.copy()
         self.reset_scoresheet()
 
     def add_view(self, view):
@@ -1233,12 +1233,15 @@ class GradingAssistantView:
         self.message_editor = None
         self.menu_bar = tk.Menu(self.window)
         self.annotation_bank_bar = tk.Menu(self.menu_bar, tearoff=0)
+        self.annotation_bank_bar.add_command(label="New", command=self.new_bank,
+                accelerator="Ctrl+N")
         self.annotation_bank_bar.add_command(label="Save", command=self.save_bank,
                 accelerator="Ctrl+S")
         self.annotation_bank_bar.add_command(label="Save as...", command=self.save_bank_as,
                 accelerator="Ctrl+Shift+S")
         self.annotation_bank_bar.add_command(label="Open...", command=self.load_bank,
                 accelerator="Ctrl+O")
+        self.window.bind_all("<Control-n>", lambda _: self.new_bank())
         self.window.bind_all("<Control-s>", lambda _: self.save_bank())
         self.window.bind_all("<Control-Shift-KeyPress-S>", lambda _: self.save_bank_as())
         self.window.bind_all("<Control-o>", lambda _: self.load_bank())
@@ -1258,6 +1261,21 @@ class GradingAssistantView:
         self.menu_bar.add_cascade(label="Edit", menu=self.scoresheet_bar)
         self.window['menu'] = self.menu_bar
         self.window.mainloop()
+
+    def new_bank(self):
+        self.model.ta_email = "your_email@uw.edu"
+        self.model.bank_filename = '' 
+        self.model.assignments = []
+        self.model.annotations = []
+        self.model.mistakes = []
+        self.model.perfect = DEFAULT_PERFECT
+        self.model.poor = DEFAULT_POOR
+        self.model.general = DEFAULT_GENERAL.copy()
+        self.model.categories = DEFAULT_CATEGORIES.copy()
+        self.model.not_graded_categories = DEFAULT_NOT_GRADED.copy()
+        self.model.abbreviations = DEFAULT_ABBREVIATIONS.copy()
+        self.model.reset_scoresheet()
+        self.notify()
 
     def save_bank(self):
         if not self.model.bank_filename:
