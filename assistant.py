@@ -10,6 +10,7 @@ import pickle
 import sys
 
 # yes this code is very shitty but it works, ok?
+# if you notice anything strange lmk at thalea@uw.edu
 
 # default graded and not graded categories
 
