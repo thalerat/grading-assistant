@@ -1315,7 +1315,7 @@ class GradingAssistantView:
                     self.model.not_graded_categories.append(category)
             for abbreviation in abbreviations:
                 if abbreviation not in self.model.abbreviations:
-                    self.model.abbreviations.append(abbreviation)
+                    self.model.abbreviations[abbreviation] = abbreviations[abbreviation]
             for assignment in assignments:
                 if assignment not in self.model.assignments:
                     self.model.assignments.append(assignment)
