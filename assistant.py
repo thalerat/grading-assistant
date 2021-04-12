@@ -647,7 +647,7 @@ class GradingAssistantView:
                     state='disabled', wrap=tk.WORD)
             self.selected_annotation_text.grid(row=2, column=0, columnspan=3, pady=2, sticky='nsew')
              # notes
-            self.selected_note_text = tk.Text(self.selected_view_frame, width=30, height=2,
+            self.selected_note_text = tk.Text(self.selected_view_frame, width=30, height=3,
                     state='disabled', wrap=tk.WORD)
             self.selected_note_text.grid(row=3, column=0, columnspan=3, pady=2, sticky='nsew')
             # copy, add buttons
