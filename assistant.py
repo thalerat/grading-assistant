@@ -382,7 +382,14 @@ class GradingAssistantView:
             self.copy_scoresheet_button = \
                     ttk.Button(self.grade_entries_frame, text="Copy Scoresheet")
             self.copy_scoresheet_button.grid(row=2, column=1, padx=4, sticky='ew')
-            self.copy_scoresheet_button.bind("<Button>", lambda _: self.model.copy_scoresheet())
+            self.unique = False
+            def copy():
+                if not self.unique:
+                    tk.messagebox.showinfo(title="Uniqueness", 
+                        message="Be sure to make your annotations and scoresheets unique to each student!")
+                    self.unique = True
+                self.model.copy_scoresheet()
+            self.copy_scoresheet_button.bind("<Button>", lambda _: copy())
                 
 
         def add_selected_mistakes(self):
