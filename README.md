@@ -51,7 +51,7 @@ When adding or editing a mistake you are given the option to enter line numbers 
 
 After entering in all of the mistakes, click the "Copy Scoresheet" button to copy a formatted scoresheet to your clipboard that can then be pasted into Ed. If a student has no mistakes in a category, a random positive message will be given instead. By default, categories that are marked as not graded (e.g. the "Notes (not graded)" category) will not appear in the scoresheet if they have no mistakes.
 
-The scoresheet will use the name and email entered by the user to generate an overall message for the student. These require some student-specific editing to make sure that the information is still unique to the student. There are specific messages if a student gets a perfect score (e.g. 4 E's) or if they meet a certain threshold of mistakes (equivalent to 3 N's or 2 U's). Any other score gets a randomly generated overall message.
+The scoresheet will use the name and email entered by the user to generate an overall message for the student. These require some student-specific editing to make sure that the information is still unique to the student. There are specific messages if a student gets a perfect score (e.g. 4 E's) or if they meet a certain threshold of mistakes (equivalent to 2 N's and an S or an N and a U). Any other score gets a randomly generated overall message.
 
 When you're completely done with grading a student, then you can hit "Ctrl+R" or "Edit > Reset Scoresheet" to reset the scoresheet back to zero.
 

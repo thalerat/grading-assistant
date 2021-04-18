@@ -256,7 +256,7 @@ class GradingAssistantModel:
         # overall feedback
         if score == 0:
             markdown += format(self.perfect)
-        elif score <= 5:
+        elif score <= 4:
             overall = ''
             for sentence_option in self.general:
                 overall += format(random.sample(sentence_option, 1)[0]) + ' '
