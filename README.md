@@ -13,7 +13,7 @@ CSE 14X Grading Assistant is a program to help optimize the time that you spend 
     4. [Example Generated Scoresheet](#example-generated-scoresheet)
     5. [Customizing the Overall Feedback](#customizing-the-overall-feedback)
 4. [Using the Annotation Bank](#using-the-annotation-bank)
-    1. [Opening an Annotation Bank File](#opening-an-annotation-bank-file)
+    1. [Saving and Opening an Annotation Bank File](#saving-and-opening-an-annotation-bank-file)
     2. [Finding an Annotation](#finding-an-annotation)
     3. [Using an Annotation](#using-an-annotation)
     4. [Example Formatted Annotations](#example-formatted-annotations)
