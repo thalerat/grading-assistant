@@ -132,11 +132,15 @@ To edit an annotation that is already in the bank, select any annotation in the 
 
 To remove an annotation from the bank, select any annotation in the annotation bank table and hit the "-" button. This will open up a dialog asking you to confirm that you would like to remove the annotation. Hit "Yes" to delete the annotation.
 
+Annotations can also be added by exporting to a .csv file, adding annotations in that file, and then importing the updated .csv file into a new bank. Note that the assistant does not check for duplicates.
+
 ### Adding and Removing Assignments
 
 To add an assignment to the annotation bank, hit the same "+" button used for adding an annotation to the bank. In the upper right of this window, next to the assignment selection dropdown, click the "+" button. This will open a window prompting you to enter in the assignment name you would like to add. Enter the name and hit the "Ok" button to add the assignment to the bank.
 
 To remove an assignment from the annotation bank, hit the "+" button for adding an annotatation to the bank. Here, you can select any assignment from the assignment selection dropdown and hit the "-" button directly to the right of the dropdown. This will open up a pop-up asking you to confirm that you would like to delete the selected assignment. Hit "Yes" to remove the assignment, and any annotations for that assignment, from the bank.
+
+Assignments can also be added by exporting to a .csv file, adding annotations for the assignment in that file, and then importing the updated .csv file into a new bank. Note that the assistant does not check for duplicates.
 
 ### Adding, Editing, and Removing Categories
 
