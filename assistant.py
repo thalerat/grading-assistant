@@ -56,7 +56,7 @@ DEFAULT_GENERAL = [
      "As always, if you have any questions feel free to ask (my email is [<email>](mailto:<email>))!! Keep it up!"]
 ]
 
-DEFAULT_PERFECT = "Perfect, <name>!! Keep it up!!"
+DEFAULT_PERFECT = "Perfect, <name>!! Let me know if you have any questions at [<email>](mailto:<email>). Keep it up!!"
 
 DEFAULT_POOR = ("Good start on this assignment <name>! I left feedback that will hopefully help," + 
           " but if you feel stuck I recommend going to support hours. Let me know if you have" +
