@@ -1395,8 +1395,10 @@ class GradingAssistantView:
                                 self.model.assignments.append(assignment)
                             if grade not in GRADES:
                                 grade = GRADES[0]
-                            self.model.annotations.append((assignment, notes, category, grade,
-                                description, annotation, tags))
+                            complete_annotation = (assignment, notes, category, grade,
+                                description, annotation, tags)
+                            if complete_annotation not in self.model.annotations:
+                                self.model.annotations.append(complete_annotation)
                     count += 1
             self.model._calculate_grades()
             self.model.annotations.sort(key = lambda x : x[4])
