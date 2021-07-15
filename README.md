@@ -14,9 +14,10 @@ CSE 14X Grading Assistant is a program to help optimize the time that you spend 
     5. [Customizing the Overall Feedback](#customizing-the-overall-feedback)
 4. [Using the Annotation Bank](#using-the-annotation-bank)
     1. [Saving and Opening an Annotation Bank File](#saving-and-opening-an-annotation-bank-file)
-    2. [Finding an Annotation](#finding-an-annotation)
-    3. [Using an Annotation](#using-an-annotation)
-    4. [Example Formatted Annotations](#example-formatted-annotations)
+    2. [Importing and Exporting to CSV](#importing-and-exporting-to-csv)
+    3. [Finding an Annotation](#finding-an-annotation)
+    4. [Using an Annotation](#using-an-annotation)
+    5. [Example Formatted Annotations](#example-formatted-annotations)
 5. [Updating the Annotation Bank](#updating-the-annotation-bank)
     1. [Adding, Editing, and Removing Annotations](#adding-editing-and-removing-annotations)
     2. [Adding and Removing Assignments](#adding-and-removing-assignments)
@@ -89,7 +90,11 @@ The bottom half of the assistant is occupied by the annotation bank.
 
 ### Saving and Opening an Annotation Bank File
 
-To save the current annotation bank, including the assignments and grading categories, hit "Ctrl+Shift+S" or "File > Save As" to save as a new file or hit "Ctrl+S" or "File > Save" to save an already opened file. To open an annotation bank, hit "Ctrl+O" or "File > Open" and select the annotation bank file (`.abank`). To import annotations from one bank into another click "File > Import" and select the annotation bank file to import annotations from. Importing an annotation bank does not import any custom overall feedback messages in the bank.
+To save the current annotation bank, including the assignments and grading categories, hit "Ctrl+Shift+S" or "File > Save As" to save as a new file or hit "Ctrl+S" or "File > Save" to save an already opened file. To open an annotation bank, hit "Ctrl+O" or "File > Open" and select the annotation bank file (`.abank`). To import annotations from one bank into another click "File > Import annotation bank..." and select the annotation bank file to import annotations from. Importing an annotation bank does not import any custom overall feedback messages in the bank.
+
+### Importing and Exporting to CSV
+
+To save all of the annotations to a csv file, click "File > Export to .csv..." and type in a name for the file. The file will be sorted in the same order the assignments were added to the bank. The first row will describe the format of the all of the rows in the bank. To import from a csv file, click "File > Import from .csv...", and select the csv file you would like to import. The format must follow the same format as exported files (first row will be ignored, all others should be in the same order as the exported rows). Annotations with a category that is not already in the bank will be ignored, annotations with an assignment that is not already in the bank will add the assignment to the bank, and annotations with a grade that does not match the default ESNU grades will default to E.
 
 ### Finding an Annotation
 

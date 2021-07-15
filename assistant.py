@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
 from tkinter import simpledialog
+import csv
 import pyperclip
 import random
 import re
@@ -1242,18 +1243,21 @@ class GradingAssistantView:
         self.annotation_bank_bar = tk.Menu(self.menu_bar, tearoff=0)
         self.annotation_bank_bar.add_command(label="New", command=self.new_bank,
                 accelerator="Ctrl+N")
+        self.annotation_bank_bar.add_separator()
+        self.annotation_bank_bar.add_command(label="Open...", command=self.load_bank,
+                accelerator="Ctrl+O")
+        self.annotation_bank_bar.add_command(label="Import from .csv...", command=self.import_csv)
+        self.annotation_bank_bar.add_command(label="Import annotation bank...", command=self.import_bank)
+        self.annotation_bank_bar.add_separator()
         self.annotation_bank_bar.add_command(label="Save", command=self.save_bank,
                 accelerator="Ctrl+S")
         self.annotation_bank_bar.add_command(label="Save as...", command=self.save_bank_as,
                 accelerator="Ctrl+Shift+S")
-        self.annotation_bank_bar.add_command(label="Open...", command=self.load_bank,
-                accelerator="Ctrl+O")
+        self.annotation_bank_bar.add_command(label="Export to .csv...", command=self.export_csv)
         self.window.bind_all("<Control-n>", lambda _: self.new_bank())
         self.window.bind_all("<Control-s>", lambda _: self.save_bank())
         self.window.bind_all("<Control-Shift-KeyPress-S>", lambda _: self.save_bank_as())
         self.window.bind_all("<Control-o>", lambda _: self.load_bank())
-        self.annotation_bank_bar.add_separator()
-        self.annotation_bank_bar.add_command(label="Import...", command=self.import_bank)
         self.annotation_bank_bar.add_separator()
         self.annotation_bank_bar.add_command(label="Exit", command=self.window.quit,
                 accelerator="Ctrl+Q")
@@ -1351,6 +1355,54 @@ class GradingAssistantView:
             self.model.annotations.sort(key = lambda x : x[4])
             load_file.close()
             self.notify()
+
+    def export_csv(self):
+        filename = filedialog.asksaveasfilename(initialdir = ".", title = "Export CSV", 
+                defaultextension=".csv", filetypes =[("Comma-separated values", "*.csv")])
+        # (assignment, notes, category, grade, description, annotation, tags)
+        if filename:
+            with open(filename, 'w', newline='') as csv_file:
+                writer = csv.writer(csv_file)
+                template = ("Assignment", "Notes", "Category", "Grade", "Description", "Annotation", "Tags")
+                writer.writerow(template)
+                assignments = ['General'] + self.model.assignments
+                for assignment in assignments:
+                    for annotation in self.model.annotations:
+                        if annotation[0] == assignment:
+                            writer.writerow(annotation)
+            self.notify()
+
+    def import_csv(self):
+        filename = filedialog.askopenfilename(initialdir = ".", title = "Import CSV",
+                filetypes =[("Comma-separated values", "*.csv")])
+        if filename:
+            with open(filename, "r", newline='') as csv_file:
+                reader = csv.reader(csv_file)
+                count = 0
+                for row in reader:
+                    # abbreviation = "".join(word[0].upper() for word in category_name.split())
+                    if count != 0:
+                        assignment = row[0]
+                        notes = row[1]
+                        category = row[2]
+                        grade = row[3]
+                        description = row[4]
+                        annotation = row[5]
+                        tags = row[6]
+                        if (category in self.model.categories or 
+                                category in self.model.not_graded_categories):
+                            if assignment not in self.model.assignments:
+                                self.model.assignments.append(assignment)
+                            if grade not in GRADES:
+                                grade = GRADES[0]
+                            self.model.annotations.append((assignment, notes, category, grade,
+                                description, annotation, tags))
+                    count += 1
+            self.model._calculate_grades()
+            self.model.annotations.sort(key = lambda x : x[4])
+            self.notify()
+
+
 
     def edit_categories(self):
         if self.category_editor:
