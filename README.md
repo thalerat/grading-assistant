@@ -152,4 +152,4 @@ To remove a category, select any category from the list and hit the "-" button. 
 
 ## Support
 
-Please email [alexandracthaler@gmail.com](mailto:alexandracthaler@gmail.com) if you notice any bugs or issues while grading.
+Please email [alexandracthaler@gmail.com](mailto:alexandracthaler@gmail.com) for feature requests or if you notice any bugs or issues while grading.
