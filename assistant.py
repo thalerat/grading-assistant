@@ -11,7 +11,9 @@ import pickle
 import sys
 
 # yes this code is very shitty but it works, ok?
-# if you notice anything strange lmk at thalea@uw.edu
+# if you notice anything strange lmk at alexandracthaler@gmail.com
+# happy grading!
+# - Alexa :)
 
 # default graded and not graded categories
 
